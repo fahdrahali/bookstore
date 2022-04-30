@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('http://fonts.cdnfonts.com/css/lato');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav {
+    display: flex;
+    list-style: none;
+    height: 100px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.nav li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.nav li:nth-child(1) {
+    font-size: 40px;
+}
+
+.nav li:nth-child(2), li:nth-child(3) {
+    align-self: center;
+}
+
+.books {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    row-gap: 30px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 90%;
+    height: 200px;
+    border: 1px solid #c7c6c6;
+    padding: 20px;
+}
+
+.btn-delete {
+    width: 100px;
+    height: 40px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 30px;
+    border-top: 2px solid rgb(211, 207, 207);
+    padding-top: 20px;
+}
+
+.form input{
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+form button {
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
 }
