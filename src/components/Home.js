@@ -7,7 +7,6 @@ import NavBar from './NavBar';
 const Home = () => (
   <>
     <NavBar />
-    <h1>Home Component</h1>
     <Routes>
       <Route path="/" element={<Books />} />
       <Route path="/categories" element={<Categories />} />

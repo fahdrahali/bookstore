@@ -2,10 +2,10 @@ import { checkPropTypes } from 'prop-types';
 import React from 'react';
 
 const Book = ({ title, author }) => (
-  <div>
+  <div className="book">
     <h1>{title}</h1>
     <h2>{author}</h2>
-    <button type="button">Delete</button>
+    <button className="btn-delete" type="button">Delete</button>
   </div>
 );
 
