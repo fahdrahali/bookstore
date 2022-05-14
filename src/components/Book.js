@@ -7,7 +7,6 @@ const Book = ({ book }) => {
   const dispatch = useDispatch();
   const { title, author } = book;
   const deleteBook = (book) => {
-    console.log('deleted...', book);
     dispatch(removeBook(book));
   };
   return (

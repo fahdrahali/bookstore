@@ -5,7 +5,6 @@ import Form from './Form';
 
 const Books = () => {
   const books = useSelector((state) => state.books.books);
-  console.log('books', books);
   const [currBooks, setCurrBooks] = useState(books);
 
   useEffect(() => {
