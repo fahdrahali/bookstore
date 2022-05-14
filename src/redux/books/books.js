@@ -1,7 +1,18 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 const initialState = {
-  books: [],
+  books: [
+    {
+      id: 1,
+      title: 'Linux pocket guide',
+      author: 'Daniel J. Barrett',
+    },
+    {
+      id: 2,
+      title: 'React Explained',
+      author: ' Zac Gordon',
+    },
+  ],
 };
 
 export const addBook = (book) => ({
@@ -23,7 +34,7 @@ const booksReducer = (state = initialState, action) => {
         author: action.book.author,
       },
     ];
-    case REMOVE_BOOK: return state.books.filter((book) => book.id !== action.book.id);
+    case REMOVE_BOOK: return [...state.books.filter((book) => book.id !== action.book.id)];
     default: return state;
   }
 };
