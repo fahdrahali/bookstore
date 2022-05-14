@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import Form from './Form';
 
 const Books = () => {
-  const [books, setBooks] = useState([]);
-
-  const listBooks = [{ id: 1, title: 'The Hunger Games', author: 'Suzannes Collins' },
-    { id: 2, title: 'Dune', author: 'Frank' }];
+  const books = useSelector((state) => state.books.books);
+  const [currBooks, setCurrBooks] = useState(books);
 
   useEffect(() => {
-    setBooks([...listBooks]);
-  }, [setBooks]);
+    setCurrBooks([...books]);
+  }, [books]);
 
   return (
     <div className="books">
-      { books.map((book) => (
-        <Book key={book.id} title={book.title} author={book.author} />
+      { currBooks.map((book) => (
+        <Book key={book.id} book={book} />
       ))}
       <Form />
     </div>
