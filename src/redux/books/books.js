@@ -27,13 +27,12 @@ export const removeBook = (book) => ({
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK: return [
-      ...state.books,
-      {
-        title: action.book.title,
-        author: action.book.author,
-      },
-    ];
+    case ADD_BOOK: return {
+      books: [
+        ...state.books,
+        action.book,
+      ],
+    };
     case REMOVE_BOOK: return [...state.books.filter((book) => book.id !== action.book.id)];
     default: return state;
   }
