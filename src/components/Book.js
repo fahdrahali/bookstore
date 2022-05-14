@@ -1,17 +1,26 @@
 import { checkPropTypes } from 'prop-types';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-const Book = ({ title, author }) => (
-  <div className="book">
-    <h1>{title}</h1>
-    <h2>{author}</h2>
-    <button className="btn-delete" type="button">Delete</button>
-  </div>
-);
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
+  const { title, author } = book;
+  const deleteBook = (book) => {
+    console.log('deleted...', book);
+    dispatch(removeBook(book));
+  };
+  return (
+    <div className="book">
+      <h1>{title}</h1>
+      <h2>{author}</h2>
+      <button className="btn-delete" type="button" onClick={() => deleteBook(book)}>Delete</button>
+    </div>
+  );
+};
 
 Book.propTypes = {
-  title: checkPropTypes.isRequired,
-  author: checkPropTypes.isRequired,
+  book: checkPropTypes.isRequired,
 };
 
 export default Book;
